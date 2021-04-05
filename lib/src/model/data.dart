@@ -65,9 +65,8 @@ class AppData {
         name: "Sneakers",
         image: 'assets/shoe_thumb_2.png',
         isSelected: true),
-    Category(id: 2, name: "Jacket", image: 'assets/jacket.png'),
-    Category(id: 3, name: "Watch", image: 'assets/watch.png'),
-    Category(id: 4, name: "Watch", image: 'assets/watch.png'),
+    Category(id: 2, name: "Furniture", image: 'assets/watch.png'),
+    Category(id: 3, name: "TShirt", image: 'assets/jacket.png'),
   ];
   static List<String> showThumbnailList = [
     "assets/shoe_thumb_5.png",

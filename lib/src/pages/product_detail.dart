@@ -113,8 +113,8 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         alignment: Alignment.bottomCenter,
         children: <Widget>[
           TitleText(
-            text: "AIP",
-            fontSize: 160,
+            text: "Virtual Trial Demo",
+            fontSize: 80,
             color: LightColor.lightGrey,
           ),
           Image.asset('assets/show_1.png')
@@ -160,6 +160,45 @@ class _ProductDetailPageState extends State<ProductDetailPage>
           child: Image.asset(image),
         ).ripple(() {}, borderRadius: BorderRadius.all(Radius.circular(13))),
       ),
+    );
+  }
+
+  Widget _virtualTrialButton() {
+    return Container(
+        //padding: EdgeInsets.all(10),
+        child: Align(
+        alignment: FractionalOffset.bottomRight,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(10),
+              height: 50,
+              decoration: BoxDecoration(
+                border: Border.all(
+                    color: LightColor.iconColor, style: BorderStyle.none),
+                borderRadius: BorderRadius.all(Radius.circular(13)),
+                color: LightColor.skyBlue,
+              ),
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(
+                      Icons.photo_camera_front,
+                      color: LightColor.background,
+                    ),
+                    TitleText(
+                      text: "  Try Virtually",
+                      fontSize: 18,
+                      color: LightColor.background,
+                    ),
+                  ]),
+            ).ripple(() {},
+                borderRadius: BorderRadius.all(Radius.circular(13))),
+          ],
+        )
+        )
     );
   }
 
@@ -303,7 +342,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         TitleText(
-          text: "Available Size",
+          text: "Available Color",
           fontSize: 14,
         ),
         SizedBox(height: 20),
@@ -352,7 +391,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         TitleText(
-          text: "Available Size",
+          text: "Product details",
           fontSize: 14,
         ),
         SizedBox(height: 20),
@@ -376,6 +415,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
       floatingActionButton: _flotingButton(),
       body: SafeArea(
         child: Container(
+          padding: AppTheme.padding,
           decoration: BoxDecoration(
               gradient: LinearGradient(
             colors: [
@@ -392,6 +432,13 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                   _appBar(),
                   _productImage(),
                   _categoryWidget(),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  _virtualTrialButton(),
+                  SizedBox(
+                    height: 20,
+                  ),
                 ],
               ),
               _detailWidget()
