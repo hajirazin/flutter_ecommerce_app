@@ -113,7 +113,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         alignment: Alignment.bottomCenter,
         children: <Widget>[
           TitleText(
-            text: "Virtual Trial Demo",
+            text: " ",
             fontSize: 80,
             color: LightColor.lightGrey,
           ),
@@ -165,15 +165,12 @@ class _ProductDetailPageState extends State<ProductDetailPage>
 
   Widget _virtualTrialButton() {
     return Container(
-        //padding: EdgeInsets.all(10),
-        child: Align(
-        alignment: FractionalOffset.bottomRight,
-        child: Row(
+        padding: EdgeInsets.all(10),
+        child:Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Container(
               padding: EdgeInsets.all(10),
-              height: 50,
               decoration: BoxDecoration(
                 border: Border.all(
                     color: LightColor.iconColor, style: BorderStyle.none),
@@ -181,7 +178,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                 color: LightColor.skyBlue,
               ),
               child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Icon(
@@ -198,15 +194,11 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                 borderRadius: BorderRadius.all(Radius.circular(13))),
           ],
         )
-        )
     );
   }
 
   Widget _detailWidget() {
     return DraggableScrollableSheet(
-      maxChildSize: .8,
-      initialChildSize: .53,
-      minChildSize: .53,
       builder: (context, scrollController) {
         return Container(
           padding: AppTheme.padding.copyWith(bottom: 0),
